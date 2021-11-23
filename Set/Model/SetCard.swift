@@ -73,7 +73,7 @@ struct SetCard: CustomStringConvertible, Equatable, Identifiable {
         cardsToCheck.reduce(0, {$0 + $1.thirdSign.rawValue}),
         cardsToCheck.reduce(0, {$0 + $1.fourthSign.rawValue})
       ]
-       // return true
+       //return true
         return signsSum.reduce(true, {$0 && ($1 % 3 == 0)})
     }
 }

@@ -73,7 +73,6 @@ struct SetCardView: View {
                 VStack(alignment: .center, spacing: 0){
                     Spacer(minLength: 0)
                     VStack(alignment: .center, spacing: DrawingConstants.spacing) {
-
                         let heightWithoutSpacing = geometry.size.height - (DrawingConstants.spacing * (DrawingConstants.maxSymbolsCount-1))
                         let aspectRatio = (geometry.size.width / heightWithoutSpacing)  * DrawingConstants.maxSymbolsCount
 
@@ -89,15 +88,18 @@ struct SetCardView: View {
     }
     
     var body: some View {
+        GeometryReader {geometry in
             ZStack {
                 // border
                 let shape = RoundedRectangle(cornerRadius: DrawingConstants.cardCornerRadius)
+                shape.fill(DrawingConstants.backgroundColor)
                 shape.strokeBorder(DrawingConstants.normalColor, lineWidth: DrawingConstants.borderWidth)
                 if card.isSelected {
                     shape.strokeBorder(DrawingConstants.selectedColor, lineWidth: DrawingConstants.borderWidth)
                 }
                 getContentView(from: self.card).padding()
             }
+        }
     }
     
     struct DrawingConstants {
@@ -107,6 +109,7 @@ struct SetCardView: View {
         static let spacing: CGFloat = 10
         static let padding: CGFloat = 3
         static let opacity: CGFloat = 0.25
+        static let backgroundColor: Color = Color.white
         static let normalColor: Color = Color.purple
         static let selectedColor: Color = Color.red
         static let matchColor: Color = Color.yellow

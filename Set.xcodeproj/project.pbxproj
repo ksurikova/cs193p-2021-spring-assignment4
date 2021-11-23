@@ -10,6 +10,9 @@
 		EFAC5BFE274645E000B84A63 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC5BFD274645E000B84A63 /* Shake.swift */; };
 		EFAC5C002746461D00B84A63 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC5BFF2746461D00B84A63 /* ViewExtensions.swift */; };
 		EFAC5C02274792B800B84A63 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC5C01274792B800B84A63 /* Cardify.swift */; };
+		EFAC5C04274E76C000B84A63 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC5C03274E76BF00B84A63 /* TestView.swift */; };
+		EFAC5C06274E775200B84A63 /* TestVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC5C05274E775200B84A63 /* TestVM.swift */; };
+		EFAC5C08274E779F00B84A63 /* TestGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC5C07274E779F00B84A63 /* TestGame.swift */; };
 		EFC9D3A62716B05F007AFCF8 /* SetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC9D3A52716B05F007AFCF8 /* SetApp.swift */; };
 		EFC9D3A82716B05F007AFCF8 /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC9D3A72716B05F007AFCF8 /* SetGameView.swift */; };
 		EFC9D3AA2716B065007AFCF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFC9D3A92716B065007AFCF8 /* Assets.xcassets */; };
@@ -26,6 +29,9 @@
 		EFAC5BFD274645E000B84A63 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Shake.swift; path = Set/Views/Shake.swift; sourceTree = SOURCE_ROOT; };
 		EFAC5BFF2746461D00B84A63 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = Set/Views/ViewExtensions.swift; sourceTree = SOURCE_ROOT; };
 		EFAC5C01274792B800B84A63 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cardify.swift; path = Set/Views/Cardify.swift; sourceTree = SOURCE_ROOT; };
+		EFAC5C03274E76BF00B84A63 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		EFAC5C05274E775200B84A63 /* TestVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVM.swift; sourceTree = "<group>"; };
+		EFAC5C07274E779F00B84A63 /* TestGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGame.swift; sourceTree = "<group>"; };
 		EFC9D3A22716B05F007AFCF8 /* Set.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Set.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFC9D3A52716B05F007AFCF8 /* SetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetApp.swift; sourceTree = "<group>"; };
 		EFC9D3A72716B05F007AFCF8 /* SetGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
@@ -105,6 +111,7 @@
 			children = (
 				EFC9D3A72716B05F007AFCF8 /* SetGameView.swift */,
 				EFC9D3C02716D279007AFCF8 /* SetCardView.swift */,
+				EFAC5C03274E76BF00B84A63 /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				EFC9D3BE2716D10C007AFCF8 /* SetGameVM.swift */,
+				EFAC5C05274E775200B84A63 /* TestVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -122,6 +130,7 @@
 			children = (
 				EFC9D3B82716B9A9007AFCF8 /* SetCard.swift */,
 				EFC9D3BA2716BD93007AFCF8 /* SetGame.swift */,
+				EFAC5C07274E779F00B84A63 /* TestGame.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,15 +205,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFAC5C04274E76C000B84A63 /* TestView.swift in Sources */,
 				EFAC5C02274792B800B84A63 /* Cardify.swift in Sources */,
 				EFC9D3A82716B05F007AFCF8 /* SetGameView.swift in Sources */,
 				EFC9D3BF2716D10C007AFCF8 /* SetGameVM.swift in Sources */,
 				EFAC5BFE274645E000B84A63 /* Shake.swift in Sources */,
 				EFAC5C002746461D00B84A63 /* ViewExtensions.swift in Sources */,
 				EFC9D3C12716D279007AFCF8 /* SetCardView.swift in Sources */,
+				EFAC5C06274E775200B84A63 /* TestVM.swift in Sources */,
 				EFC9D3A62716B05F007AFCF8 /* SetApp.swift in Sources */,
 				EFC9D3C32716E7E8007AFCF8 /* Diamond.swift in Sources */,
 				EFC9D3BB2716BD93007AFCF8 /* SetGame.swift in Sources */,
+				EFAC5C08274E779F00B84A63 /* TestGame.swift in Sources */,
 				EFC9D3B92716B9A9007AFCF8 /* SetCard.swift in Sources */,
 				EFC9D3B52716B0A2007AFCF8 /* AspectVGrid.swift in Sources */,
 			);

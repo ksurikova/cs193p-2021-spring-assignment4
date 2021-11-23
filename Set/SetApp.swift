@@ -16,4 +16,12 @@ struct SetApp: App {
             SetGameView(game: game)
         }
     }
+    
+    
+//    private let game = TestVM()
+//    var body: some Scene {
+//        WindowGroup {
+//            TestView(game: game)
+//        }
+//    }
 }

@@ -12,7 +12,9 @@ struct SetGame {
     static let cardsCountForFirstDeal = 12
     
     private(set) var deck: [SetCard]
-    private(set) var cardsOnBoard: [SetCard]
+    private(set) var cardsOnBoard: [SetCard] 
+    private(set) var discarded: [SetCard]
+    private(set) var deal: [SetCard]
     
     private var selectedCardsIndices : [Int] { get {return cardsOnBoard.indices.filter{cardsOnBoard[$0].isSelected}}}
     
@@ -25,15 +27,31 @@ struct SetGame {
     
     mutating func dealCards(){
         guard canDealMoreCards() else {return }
+        deal = [SetCard]()
         if isSet ?? false {
-            cardsOnBoard.indices.filter{cardsOnBoard[$0].isMatched == true}.forEach{cardsOnBoard[$0] = deck.removeFirst()}
+            for index in selectedCardsIndices {
+                let elem = deck.removeFirst()
+                var discard = cardsOnBoard[index]
+                discard.isSelected = false
+                cardsOnBoard[index] = elem
+                discarded.append(discard)
+                deal.append(elem)
+            }
         }
         else {
             for _ in 0..<SetGame.cardsToDealAndCheckCount {
-                cardsOnBoard.append(deck.removeFirst())
+                let elem = deck.removeFirst()
+                cardsOnBoard.append(elem)
+                deal.append(elem)
             }
         }
     }
+    
+//    mutating func discard()  {
+//        var discard = cardsOnBoard.filter{$0.isMatched ?? false == true}
+//        discard.indices.forEach{discard[$0].isSelected = false}
+//        discarded.append(contentsOf: discard)
+//    }
   
     mutating func choose(_ card: SetCard) {
         if let indexOfCurrentCard = cardsOnBoard.firstIndex(of: card) {
@@ -50,6 +68,7 @@ struct SetGame {
                 if let set = isSet {
                     if set {
                         let currentCardWasInMatch = cardsOnBoard[indexOfCurrentCard].isMatched ?? false
+                        //discard()
                         dealCards()
                         cardsOnBoard[indexOfCurrentCard].isSelected = !currentCardWasInMatch
                     }
@@ -68,12 +87,13 @@ struct SetGame {
     init() {
         deck = SetGame.getDeck()
         cardsOnBoard = [SetCard]()
-
+        discarded = [SetCard]()
+        deal = [SetCard]()
     }
-    
     
     mutating func dealCardsForFirst()  {
         cardsOnBoard = Array(deck.prefix(SetGame.cardsCountForFirstDeal))
+        deal = cardsOnBoard
         deck.removeSubrange(0..<SetGame.cardsCountForFirstDeal)
     }
 

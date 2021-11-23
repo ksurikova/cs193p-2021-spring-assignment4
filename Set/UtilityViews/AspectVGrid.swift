@@ -13,6 +13,7 @@ struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiabl
     var aspectRatio: CGFloat
     var minWidth: CGFloat
     var content : (Item) -> ItemView
+
     
     init(items: [Item], aspectRatio: CGFloat, minWidth: CGFloat, @ViewBuilder content : @escaping (Item) -> ItemView){
         self.items = items
@@ -27,7 +28,7 @@ struct AspectVGrid<Item, ItemView>: View where ItemView: View, Item: Identifiabl
         // так что добавим VStack (flexible), чтобы не потерять это свойство
         GeometryReader {geometry in
             VStack {
-                let width: CGFloat = widthThatFitsOrEqualMinWidth(itemCount: items.count, in: geometry.size, itemAspectRatio: aspectRatio, minWidth: minWidth)
+                let width = widthThatFitsOrEqualMinWidth(itemCount: items.count, in: geometry.size, itemAspectRatio: aspectRatio, minWidth: minWidth)
                 ScrollView {
                     LazyVGrid(columns: [adaptiveGridItem(width: width)], spacing: 0){
                         ForEach(items) {
